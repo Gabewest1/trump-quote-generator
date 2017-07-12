@@ -5,6 +5,7 @@ import { Textfit } from "react-textfit"
 
 import Header from "../../components/Header"
 import Quote from "../../components/Quote"
+import FetchQuoteButton from "../../components/Button/FetchQuote"
 
 const Section = styled(Textfit)`
     background: ${blue};
@@ -25,6 +26,7 @@ export default class App extends React.Component {
                     A few words from our leaders: 
                 </Section>*/}
                 <Quote />
+                <FetchQuoteButton>New Quote</FetchQuoteButton>
             </div>
         )
     }
