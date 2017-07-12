@@ -20,10 +20,10 @@ export default class App extends React.Component {
     render() {
         return (
             <div>
-                <Header />
+                {/*<Header />
                 <Section style={{textAlign: "center"}}>
                     A few words from our leaders: 
-                </Section>
+                </Section>*/}
                 <Quote />
             </div>
         )

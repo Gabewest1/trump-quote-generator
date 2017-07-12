@@ -8,7 +8,6 @@ export let HeaderContainer = styled(Textfit)`
 `
 
 export let Title = styled.h1`
-    padding: 1em;
     color: ${white};
     margin: 0;
 `
