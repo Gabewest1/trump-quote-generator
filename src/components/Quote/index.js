@@ -1,16 +1,17 @@
 import React from "react"
+import { connect } from "react-redux"
 
 import { ImageQuoteContainer, Image, Quote as QuoteText, Container, QuoteContainer, WhiteStrip } from "./styles"
 
-export default class Quote extends React.Component {
+class Quote extends React.Component {
     render() {
+    console.log(this.props)
         return (
             <Container>
                 <ImageQuoteContainer>
                     <QuoteContainer>
                         <QuoteText>
-                            "Climate change is a conspiracy, perputrated by the Chinese, in order
-                            to slow down investment and job growth in the United States"
+                            {this.props.quote.text}
                         </QuoteText>
                     </QuoteContainer>
                     <Image src="ben-carson.png" alt="silly guy"/>
@@ -19,3 +20,5 @@ export default class Quote extends React.Component {
         )
     }
 }
+
+export default connect((state) => ({quote: state.currentQuote}), null)(Quote)
