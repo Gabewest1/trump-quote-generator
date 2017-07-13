@@ -27,7 +27,7 @@ export let Container = styled.div`
 
 export let Image = styled.img`
     max-width: 100%;
-    height: 500px;
+    // height: 500px;
 `
 export let Quote = styled.h1`
     color: white;
