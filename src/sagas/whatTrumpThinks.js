@@ -1,4 +1,3 @@
-import { delay } from "redux-saga"
 import { call, put, take } from "redux-saga/effects"
 
 const URL = "https://api.whatdoestrumpthink.com/api/v1/quotes/random"
