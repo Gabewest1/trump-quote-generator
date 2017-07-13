@@ -18,12 +18,15 @@ export let QuoteContainer = styled.div`
 `
 export let Signature = styled.span`
     float: right;
+    text-align: right;
+    font-size: ${({fontSize}) => fontSize ? fontSize : "inherit"};
 `
+
 export let Image = styled.img`
     max-width: 100%;
     max-height: ${() => window.innerHeight/1.5}px;
 `
-export let Quote = styled.h1`
+export let Quote = styled.blockquote`
     color: white;
     font-size: 24px;
     width: 90%;
