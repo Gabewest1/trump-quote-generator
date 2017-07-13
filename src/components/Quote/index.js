@@ -5,7 +5,7 @@ import { ImageQuoteContainer, Image, Quote as QuoteText, Container, QuoteContain
 
 class Quote extends React.Component {
     render() {
-    console.log(this.props)
+        
         return (
             <Container>
                 <ImageQuoteContainer>
