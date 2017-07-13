@@ -7,8 +7,5 @@ const initialState = {
 }
 
 export default createReducer(initialState)({
-    "SET_CURRENT_QUOTE": (state, action) =>  {
-        console.log(action)
-        return ({...state, text: action.quote.text})
-    }
+    "SET_CURRENT_QUOTE": (state, action) =>  action.quote
 })
