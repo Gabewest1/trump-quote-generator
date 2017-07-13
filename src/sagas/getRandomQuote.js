@@ -9,7 +9,7 @@ export function* getRandomQuote() {
         yield take(quotesConstants.GET_RANDOM_QUOTE)
         
         let coinFlip = Math.floor(Math.random() * 2) % 2 === 0 ? "heads" : "tails"
-        console.log("coinFlip:", coinFlip)
+
         let quote = coinFlip === "heads" 
                             ? yield getAdministrationQuote()
                             : yield getTrumpQuote()
