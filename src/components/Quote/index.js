@@ -17,7 +17,7 @@ class Quote extends React.Component {
             i < str.length ? /\w/.test(str[i]) ? i : indexOfNextLetter(str, i+1)
                            : -1
 
-        if(quote.startsWith("[")) {
+        if(/^\[.*\]:/.test(quote)) {
             let index = quote.indexOf(":")
             let newLineIndex = quote.indexOf("\n")
             let formattedQuote = quote.split("\n")
@@ -59,7 +59,7 @@ class Quote extends React.Component {
                         <br />
                         <Signature>&mdash; {author}</Signature>
                         <br />
-                        <Signature>{position}</Signature>                            
+                        <Signature fontSize=".8em">{position}</Signature>                            
                     </QuoteText>
                 </QuoteContainer>
             </ImageQuoteContainer>
