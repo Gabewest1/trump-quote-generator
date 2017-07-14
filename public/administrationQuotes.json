@@ -1,14 +1,129 @@
 {
     "quotes": [
         {
+            "author": "Donald J. Trump",
+            "text": "If I were to run, I'd run as a Republican. They're the dumbest group of voters in the country. They believe anything they hear on Fox News. I could lie and they'd still eat it up. I bet my numbers would be terrific.",
+            "position": "President of the United States"
+        },
+        {
             "author": "Betsy DeVos",
             "text": "[Sen. Chris Murphy]: You can't say definitively today, that guns shouldn't be in schools?\n\nI would imagine that there is probably a gun in the schools to protect from potential grizzlies.",
             "position": "Secretary of Education"
         },
         {
             "author": "Betsy DeVos",
-            "text": "I have decided, however, to stop taking offense at the suggestion that we are buying influence. Now I simply concede the point. They are right. We do expect some things in return.",
+            "text": "Education, it’s a closed system, a closed industry, a closed market. It’s a monopoly, a dead end.",
             "position": "Secretary of Education"
+        },
+        {
+            "author": "Betsy DeVos",
+            "text": "We must open up the education industry — and let’s not kid ourselves that it isn’t an industry.",
+            "position": "Secretary of Education"
+        },
+        {
+            "author": "Betsy DeVos",
+            "text": "My family is the biggest contributer of soft money to the Republican Party. I have decided, however, to stop taking offense at the suggestion that we are buying influence. Now I simply concede the point. They are right. We do expect some things in return.",
+            "position": "Secretary of Education"
+        },
+        {
+            "author": "Scott Pruitt",
+            "text": "I think that measuring with precision human activity on the climate is something very challenging to do and there's tremendous disagreement about the degree of impact, so no, I would not agree that [CO2] is a primary contributor to the global warming that we see.",
+            "position": "Administrator of the Environmental Protection Agency"
+        },
+        {
+            "author": "Scott Pruitt",
+            "text": "You have the administration using climate action as a way to wedge Republicans and Democrats, win presidential elections, congressional seats, and to go on this worldwide Al Gore type of tour to get the applause of international folks. And what it’s doing, it’s hurting our country.",
+            "position": "Administrator of the Environmental Protection Agency"
+        },
+        {
+            "author": "Rick Perry",
+            "text": "I don't think the federal government has a role in your children's education.",
+            "position": "Secretary of Energy"
+        },
+        {
+            "author": "Rick Perry",
+            "text": "I am a firm believer in intelligent design as a matter of faith and intellect, and I believe it should be presented in schools alongside the theories of evolution.",
+            "position": "Secretary of Energy"
+        },
+        {
+            "author": "Rick Perry",
+            "text": "From time to time, you may forget about an agency that you are gonna zero out... Everybody tomorrow will understand the Energy Department is one of those that needs to be done away with.",
+            "position": "Secretary of Energy"
+        },
+        {
+            "author": "Rick Perry",
+            "text": "Even if an alcoholic is powerless over alcohol once it enters his body, he still makes a choice to drink. And, even if someone is attracted to a person of the same sex, he or she still makes a choice to engage in sexual activity with someone of the same gender.",
+            "position": "Secretary of Energy"
+        },
+        {
+            "author": "Rick Perry",
+            "text": "[Climate change is] all one contrived phony mess that is falling apart under its own weight.",
+            "position": "Secretary of Energy"
+        },
+        {
+            "author": "Jeff Sessions",
+            "text": "Carbon pollution is CO2, and that’s really not a pollutant; that’s a plant food, and it doesn’t harm anybody except that it might include temperature increases.",
+            "position": "Attorney General"
+        },
+        {
+            "author": "Jeff Sessions",
+            "text": "[marijuana] is dangerous, you cannot play with it, it is not funny, it’s not something to laugh about... and to send that message with clarity that good people don’t smoke marijuana.",
+            "position": "Attorney General"
+        },
+        {
+            "author": "Jeff Sessions",
+            "text": "I thought those guys [the Ku Klux Klan] were OK until I learned they smoked pot.",
+            "position": "Attorney General"
+        },
+        {
+            "author": "Jeff Sessions",
+            "text": "The Constitution says we shall not establish a religion — Congress shall not establish a religion. It doesn’t say states couldn’t establish a religion.",
+            "position": "Attorney General"
+        },
+        {
+            "author": "Jeff Sessions",
+            "text": "Some would say: Well, you want to limit free speech when you want to stop burning the flag. Now, it is true that the Supreme Court, by a 5-to-4 majority, held that the act of burning a flag is free speech. Well, I don’t agree.",
+            "position": "Attorney General"
+        },
+        {
+            "author": "Jeff Sessions",
+            "text": "We are on a radical path. In a few years, we will have the highest percentage of non-native-born Americans ever. And it will increase every year thereafter.",
+            "position": "Attorney General"
+        },
+        {
+            "author": "Jeff Sessions",
+            "text": "It is not disputable that adopting a same-sex marriage culture undermines and weakens marriage.",
+            "position": "Attorney General"
+        },
+        {
+            "author": "Ben Carson",
+            "text": "Obamacare is really I think the worst thing that has happened in this nation since slavery... And it is in a way, it is slavery in a way, because it is making all of us subservient to the government, and it was never about health care... It was about control.",
+            "position": "Secretary of Housing and Urban Development"
+        },
+        {
+            "author": "Ben Carson",
+            "text": "My own personal theory is that Joseph built the pyramids to store grain... Now all the archeologists think that they were made for the pharaohs’ graves. But, you know, it would have to be something awfully big if you stop and think about it.",
+            "position": "Secretary of Housing and Urban Development"
+        },
+        {
+            "author": "Ben Carson",
+            "text": "Marriage is a very sacred institution and should not be degraded by allowing every other type of relationship to be made equivalent to it.",
+            "position": "Secretary of Housing and Urban Development"
+        },
+        {
+            "author": "Ben Carson",
+            "text": "Marriage is a very sacred institution and should not be degraded by allowing every other type of relationship to be made equivalent to it.",
+            "position": "Secretary of Housing and Urban Development"
+        },
+        {
+            "author": "Ben Carson",
+            "text": "I think poverty to a large extent is... a state of mind.",
+            "position": "Secretary of Housing and Urban Development"
+        },
+        {
+            "author": "Sean Spicer",
+            "text": "You had someone as despicable as Hitler who didn't even sink to using chemical weapons.",
+            "position": "Press Secretary"
         }
     ]
 }
