@@ -7,7 +7,7 @@ export function* getTrumpQuote() {
     let response = yield call(fetch, URL)
     let { message } = yield response.json()
 
-    let quote = {author: "Donald J. Trump", text: message, position: "President of the United State"}
+    let quote = {author: "Donald J. Trump", text: message, position: "President of the United States"}
 
     return quote
 }
