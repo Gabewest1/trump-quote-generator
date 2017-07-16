@@ -13,8 +13,6 @@ export default class SocialMedia extends React.Component {
                     <FetchQuoteButton>Next Idiot's Thought</FetchQuoteButton>
                 </LeftSide>
                 <RightSide>
-                    <span>Share Quote On:</span>
-                    <Divider />
                     <SocialMediaIcons>
                         <SocialMediaIcon src="Twitter.svg" />
                     </SocialMediaIcons>

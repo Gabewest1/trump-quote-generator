@@ -2,7 +2,7 @@ import React from "react"
 import { connect } from "react-redux"
 import { bindActionCreators } from "redux"
 
-import { Icon } from "./styles.js"
+import { Button, Icon } from "./styles.js"
 import { actions as socialMediaActions } from "../../actions/socialMedia"
 
 class SocialMediaIcon extends React.Component {
@@ -11,10 +11,10 @@ class SocialMediaIcon extends React.Component {
         let socialMediaPlatform = src.toLowerCase().substring(0, src.indexOf("."))
 
         return (
-            <Icon src={src} onClick={() => { 
-                console.log("IN COMPONENT:", socialMediaPlatform, quote)
-                postQuoteSocialMedia(socialMediaPlatform, quote)} }
-            />
+            <Button onClick={() => postQuoteSocialMedia(socialMediaPlatform, quote) }>
+                Share Quote
+                <Icon src={src} />
+            </Button>
         )
     }
 }
