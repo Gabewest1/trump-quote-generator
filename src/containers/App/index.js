@@ -5,11 +5,11 @@ import { Textfit } from "react-textfit"
 
 import Header from "../../components/Header"
 import Quote from "../../components/Quote"
-import FetchQuoteButton from "../../components/Button/FetchQuote"
+import SocialMedia from "../../components/SocialMedia"
 
 const Section = styled(Textfit)`
-    background: ${blue};
-    color: ${white};
+    background: ${white};
+    color: black;
     height: 100px;
     padding: 0 .5em;
     display: flex;
@@ -21,12 +21,14 @@ export default class App extends React.Component {
     render() {
         return (
             <div>
-                {/*<Header />
+                {/* <Header /> */}
                 <Section style={{textAlign: "center"}}>
                     A few words from our leaders: 
-                </Section>*/}
-                <Quote />
-                <FetchQuoteButton>New Quote</FetchQuoteButton>
+                </Section>
+                <div>
+                    <Quote />
+                    <SocialMedia />
+                </div>
             </div>
         )
     }
