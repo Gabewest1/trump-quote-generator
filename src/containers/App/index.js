@@ -8,8 +8,8 @@ import Quote from "../../components/Quote"
 import SocialMedia from "../../components/SocialMedia"
 
 const Section = styled(Textfit)`
-    background: ${white};
-    color: black;
+    // background: ${white};
+    color: ${white};
     height: 100px;
     padding: 0 .5em;
     display: flex;
@@ -17,10 +17,16 @@ const Section = styled(Textfit)`
     font-style: italic;
 `
 
+const Container = styled.div`
+    background: url(flag.jpg);
+    background-size: cover;
+    height: ${() => window.innerHeight}px;
+`
+
 export default class App extends React.Component {
     render() {
         return (
-            <div>
+            <Container>
                 {/* <Header /> */}
                 <Section style={{textAlign: "center"}}>
                     A few words from our leaders: 
@@ -29,7 +35,7 @@ export default class App extends React.Component {
                     <Quote />
                     <SocialMedia />
                 </div>
-            </div>
+            </Container>
         )
     }
 }

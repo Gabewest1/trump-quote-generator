@@ -5,7 +5,8 @@ import { red } from "../../theme/colors"
 export let ImageQuoteContainer = styled.div`
     background: black;
     position: relative;
-    width: 100%;
+    width: 80%;
+    margin: 0 auto;
     display: flex;
     align-items: center;
 `
