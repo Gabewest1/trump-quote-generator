@@ -56,7 +56,9 @@ class Quote extends React.Component {
         return (
             <Wrapper>
                 <ImageQuoteContainer>
-                    <Image src="ben-carson.png" alt="silly guy"/>
+                    <div style={{width: "50%"}}>
+                        <Image src="ben-carson1.png" alt="silly guy"/>
+                    </div>
                     <TintedBackground />
                     <QuoteContainer>
                         <QuoteText>
