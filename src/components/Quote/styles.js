@@ -5,7 +5,7 @@ import { red } from "../../theme/colors"
 export let ImageQuoteContainer = styled.div`
     background: black;
     position: relative;
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
     display: flex;
     align-items: center;
@@ -46,11 +46,11 @@ export let Quote = styled.blockquote`
     }
 `
 export const Wrapper = styled.div`
-
+    width: 80%;
+    margin: 0 auto;
 `
 export const Container = styled.div`
-    box-sizing: border-box;
-    padding: 15px 30px;
+    margin-top: 30px;
 `
 export const LeftSide = styled.aside`
     float: left;
