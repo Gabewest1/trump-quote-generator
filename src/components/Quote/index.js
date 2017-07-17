@@ -2,7 +2,11 @@ import React from "react"
 import { connect } from "react-redux"
 import { bindActionCreators } from "redux"
 import TintedBackground from "../Common/TintedBackground"
-import { ImageQuoteContainer, Image, Quote as QuoteText, Container, QuoteContainer, WhiteStrip, Signature } from "./styles"
+import { ImageQuoteContainer, Image, Quote as QuoteText, QuoteContainer, WhiteStrip, Signature } from "./styles"
+import { Container, LeftSide, RightSide, SocialMediaIcons, Wrapper } from "./styles"
+import SocialMediaIcon from "../SocialMediaIcon"
+import FetchQuoteButton from "../Button/FetchQuote"
+
 import { actions as quoteActions } from "../../actions/quotes"
 
 class Quote extends React.Component {
@@ -50,19 +54,31 @@ class Quote extends React.Component {
         let { author, position, text } = this.props.quote
 
         return (
-            <ImageQuoteContainer>
-                <Image src="ben-carson.png" alt="silly guy"/>
-                <TintedBackground />
-                <QuoteContainer>
-                    <QuoteText>
-                        {this.formatQuote(text)}
-                        <br />
-                        <Signature>&mdash; {author}</Signature>
-                        <br />
-                        <Signature fontSize=".8em">{position}</Signature>                            
-                    </QuoteText>
-                </QuoteContainer>
-            </ImageQuoteContainer>
+            <Wrapper>
+                <ImageQuoteContainer>
+                    <Image src="ben-carson.png" alt="silly guy"/>
+                    <TintedBackground />
+                    <QuoteContainer>
+                        <QuoteText>
+                            {this.formatQuote(text)}
+                            <br />
+                            <Signature>&mdash; {author}</Signature>
+                            <br />
+                            <Signature fontSize=".8em">{position}</Signature>                            
+                        </QuoteText>
+                    </QuoteContainer>
+                </ImageQuoteContainer>
+                <Container>
+                    <LeftSide>
+                        <FetchQuoteButton>Next Idiot's Thought</FetchQuoteButton>
+                    </LeftSide>
+                    <RightSide>
+                        <SocialMediaIcons>
+                            <SocialMediaIcon src="Twitter.svg" />
+                        </SocialMediaIcons>
+                    </RightSide>
+                </Container>
+            </Wrapper>
         )
     }
 }

@@ -5,7 +5,6 @@ import { Textfit } from "react-textfit"
 
 import Header from "../../components/Header"
 import Quote from "../../components/Quote"
-import SocialMedia from "../../components/SocialMedia"
 
 const Section = styled(Textfit)`
     // background: ${white};
@@ -33,7 +32,6 @@ export default class App extends React.Component {
                 </Section>
                 <div>
                     <Quote />
-                    <SocialMedia />
                 </div>
             </Container>
         )
