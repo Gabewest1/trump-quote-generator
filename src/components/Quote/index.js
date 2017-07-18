@@ -51,13 +51,24 @@ class Quote extends React.Component {
     }
     render() {
 
+        const administrationMembersImageSources = {
+            "Donald J. Trump": "donald-trump",
+            "Jeff Sessions": "jeff-sessions",
+            "Betsy DeVos": "betsy-devos",
+            "Ben Carson": "ben-carson",
+            "Scott Pruitt": "scott-pruitt",
+            "Rick Perry": "rick-perry"
+        }
+
         let { author, position, text } = this.props.quote
+
+        let imgSrc = administrationMembersImageSources[author] + "1.png"
 
         return (
             <Wrapper>
                 <ImageQuoteContainer>
                     <div style={{width: "50%"}}>
-                        <Image src="ben-carson1.png" alt="silly guy"/>
+                        <Image src={imgSrc} alt="silly guy"/>
                     </div>
                     <TintedBackground />
                     <QuoteContainer>

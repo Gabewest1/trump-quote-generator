@@ -1,13 +1,14 @@
 import React from "react"
 import styled from "styled-components"
-import { blue, white } from "../../theme/colors"
+import { blue, red, white } from "../../theme/colors"
 import { Textfit } from "react-textfit"
 
 import Header from "../../components/Header"
 import Quote from "../../components/Quote"
+import TintedBackground from "../../components/Common/TintedBackground"
 
 const Section = styled(Textfit)`
-    // background: ${white};
+    background: ${blue};
     color: ${white};
     height: 100px;
     padding: 0 .5em;
@@ -27,7 +28,7 @@ export default class App extends React.Component {
         return (
             <Container>
                 {/* <Header /> */}
-                <Section style={{textAlign: "center"}}>
+                <Section>
                     A few words from our leaders: 
                 </Section>
                 <div>
