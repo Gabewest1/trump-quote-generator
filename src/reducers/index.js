@@ -1,7 +1,9 @@
 import currentQuote from "./currentQuote"
+import trumpQuotes from "./trumpQuotes"
 
 const rootReducer = {
-    currentQuote
+    currentQuote,
+    trumpQuotes
 }
 
 export default rootReducer
