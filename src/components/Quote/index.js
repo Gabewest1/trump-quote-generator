@@ -67,7 +67,7 @@ class Quote extends React.Component {
         return (
             <Wrapper>
                 <ImageQuoteContainer>
-                    <div style={{width: "50%"}}>
+                    <div style={{width: "50%", overflow: "hidden"}}>
                         <Image src={imgSrc} alt="silly guy"/>
                     </div>
                     <TintedBackground />
@@ -76,7 +76,6 @@ class Quote extends React.Component {
                             {this.formatQuote(text)}
                             <br />
                             <Signature>&mdash; {author}</Signature>
-                            <br />
                             <Signature fontSize=".8em">{position}</Signature>                            
                         </QuoteText>
                     </QuoteContainer>
