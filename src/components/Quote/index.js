@@ -57,7 +57,8 @@ class Quote extends React.Component {
             "Betsy DeVos": "betsy-devos",
             "Ben Carson": "ben-carson",
             "Scott Pruitt": "scott-pruitt",
-            "Rick Perry": "rick-perry"
+            "Rick Perry": "rick-perry",
+            "Sean Spicer": "sean-spicer"
         }
 
         let { author, position, text } = this.props.quote
