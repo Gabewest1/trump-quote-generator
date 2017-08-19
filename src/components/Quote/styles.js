@@ -3,12 +3,13 @@ import { Textfit } from "react-textfit"
 import { red, blue } from "../../theme/colors"
 
 export let ImageQuoteContainer = styled.div`
-    background: black;
+    background: white;
     position: relative;
     width: 100%;
     margin: 0 auto;
     display: flex;
     align-items: center;
+    overflow: hidden;
 `
 export let QuoteContainer = styled.div`
     display: flex;
@@ -25,12 +26,14 @@ export let Signature = styled.span`
     text-align: right;
     font-size: ${({fontSize}) => fontSize ? fontSize : "inherit"};
 `
-
+export let ImageContainer = styled.div`
+    width: 50%;
+    height: 100%;
+    display: flex;
+`
 export let Image = styled.img`
     max-width: 100%;
-    max-height: ${() => window.innerHeight/1.5}px;
     position: relative;
-    top: 5px;
 `
 export let Quote = styled.blockquote`
     font-size: 24px;
@@ -51,22 +54,4 @@ export let Quote = styled.blockquote`
         font-size: 12px;
         line-height: 1.3;
     }
-`
-export const Wrapper = styled.div`
-    width: 80%;
-    margin: 0 auto;
-`
-export const Container = styled.div`
-    margin-top: 30px;
-`
-export const LeftSide = styled.aside`
-    float: left;
-`
-export const RightSide = styled.aside`
-    float: right;
-    display: flex;
-    align-items: center;
-`
-export const SocialMediaIcons = styled.div`
-
 `

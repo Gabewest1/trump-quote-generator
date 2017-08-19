@@ -2,10 +2,7 @@ import React from "react"
 import { connect } from "react-redux"
 import { bindActionCreators } from "redux"
 import TintedBackground from "../Common/TintedBackground"
-import { ImageQuoteContainer, Image, Quote as QuoteText, QuoteContainer, WhiteStrip, Signature } from "./styles"
-import { Container, LeftSide, RightSide, SocialMediaIcons, Wrapper } from "./styles"
-import SocialMediaIcon from "../SocialMediaIcon"
-import FetchQuoteButton from "../Button/FetchQuote"
+import { ImageQuoteContainer, ImageContainer, Image, Quote as QuoteText, QuoteContainer, Signature } from "./styles"
 
 import { actions as quoteActions } from "../../actions/quotes"
 
@@ -66,32 +63,20 @@ class Quote extends React.Component {
         let imgSrc = administrationMembersImageSources[author] + "1.png"
 
         return (
-            <Wrapper>
-                <ImageQuoteContainer>
-                    <div style={{width: "50%", overflow: "hidden"}}>
-                        <Image src={imgSrc} alt="silly guy"/>
-                    </div>
-                    <TintedBackground />
-                    <QuoteContainer>
-                        <QuoteText>
-                            {this.formatQuote(text)}
-                            <br />
-                            <Signature>&mdash; {author}</Signature>
-                            <Signature fontSize=".8em">{position}</Signature>                            
-                        </QuoteText>
-                    </QuoteContainer>
-                </ImageQuoteContainer>
-                <Container>
-                    <LeftSide>
-                        <FetchQuoteButton>Next Idiot's Thought</FetchQuoteButton>
-                    </LeftSide>
-                    <RightSide>
-                        <SocialMediaIcons>
-                            <SocialMediaIcon src="Twitter.svg" />
-                        </SocialMediaIcons>
-                    </RightSide>
-                </Container>
-            </Wrapper>
+            <ImageQuoteContainer>
+                <ImageContainer>
+                    <Image src={imgSrc} alt="silly guy"/>
+                </ImageContainer>
+                <TintedBackground />
+                <QuoteContainer>
+                    <QuoteText>
+                        {this.formatQuote(text)}
+                        <br />
+                        <Signature>&mdash; {author}</Signature>
+                        <Signature fontSize=".8em">{position}</Signature>                            
+                    </QuoteText>
+                </QuoteContainer>
+            </ImageQuoteContainer>
         )
     }
 }
