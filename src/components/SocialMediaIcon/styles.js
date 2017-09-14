@@ -22,13 +22,8 @@ export const Button = styled.button`
     display: flex;
     align-items: center;
     color: white;
-    font-size: 24px;
     font-weight: bold;
     box-shadow: 0 3px 0 #1a5c87;
     outline: none;
     border: none;
-
-    @media (max-width: 480px) {
-        font-size: 14px;
-    }
 `
