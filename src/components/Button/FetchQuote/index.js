@@ -9,7 +9,9 @@ class FetchQuoteButton extends React.Component {
     render() {
         let { children, fetchRandomQuote } = this.props
         return (
-            <Button onClick={() => fetchRandomQuote()}>{children}</Button>
+            <Button { ...this.props } onClick={() => fetchRandomQuote()}>
+                { children }
+            </Button>
         )
     }  
 }
