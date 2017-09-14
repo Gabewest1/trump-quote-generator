@@ -2,7 +2,7 @@ import React from "react"
 import { connect } from "react-redux"
 import { bindActionCreators } from "redux"
 import TintedBackground from "../Common/TintedBackground"
-import { ImageQuoteContainer, ImageContainer, Image, Quote as QuoteText, QuoteContainer, Signature } from "./styles"
+import { ImageQuoteContainer, ImageContainer, Quote as QuoteText, QuoteContainer, Signature } from "./styles"
 
 import { actions as quoteActions } from "../../actions/quotes"
 
@@ -63,11 +63,10 @@ class Quote extends React.Component {
         let imgSrc = administrationMembersImageSources[author] + "1.png"
 
         return (
-            <ImageQuoteContainer>
-                <ImageContainer>
-                    <Image src={imgSrc} alt="silly guy"/>
+            <ImageQuoteContainer { ...this.props }>
+                <ImageContainer src={imgSrc}>
+                    <TintedBackground />
                 </ImageContainer>
-                <TintedBackground />
                 <QuoteContainer>
                     <QuoteText>
                         {this.formatQuote(text)}
