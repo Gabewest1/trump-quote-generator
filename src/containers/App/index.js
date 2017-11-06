@@ -43,7 +43,7 @@ const Container = styled.div`
         linear-gradient(to top, ${ color }, ${ color }),
         url(${({ src }) => src}) center center no-repeat
     
-    background-size: 200%;;
+    background-size: 100%;;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -51,7 +51,12 @@ const Container = styled.div`
     height: ${() => window.innerHeight}px;    
     margin: 0 auto;
 
-
+    @media (max-width: 768px) {
+        background-size: 150%;
+    }
+    @media (max-width: 420px) {
+        background-size: 200%;
+    }
 `
 const Body = styled.div`
     display: flex;
