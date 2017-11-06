@@ -2,7 +2,7 @@ import createReducer from "./createReducer"
 
 const initialState = {
     author: "",
-    department: "",
+    position: "",
     text: ""
 }
 

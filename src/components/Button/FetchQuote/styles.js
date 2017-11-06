@@ -3,7 +3,7 @@ import { blue } from "../../../theme/colors"
 
 export const Button = styled.button`
     color: white;
-    padding: 20px 30px;
+    padding: 1em 1.5em;
     background: ${blue};
     box-shadow: 0 3px 0 #1a5c87;
     outline: none;

@@ -1,54 +1,51 @@
 import styled from "styled-components"
 import { Textfit } from "react-textfit"
-import { red, blue } from "../../theme/colors"
+import { red, blue, white } from "../../theme/colors"
 
-export let ImageQuoteContainer = styled.div`
-    background: white;
+export const Container = styled.div`
     position: relative;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    font-family: oswald;
     overflow: hidden;
-    box-shadow: 0 0 7px 2px white;
-
+    // background: rgba(0, 0, 0, .8);
+    color: white;
+    border: solid thin ${ white };
+    
     @media (max-width: 758px) {
         flex-direction: column;
     }
 `
-export let QuoteContainer = styled.div`
-    display: flex;
-    color: white;
-    background: ${blue};
-    justify-content: center;
-    height: 100%;
-    width: 100%;
-`
-export let Signature = styled.span`
-    float: right;
-    text-align: right;
-    font-size: ${({fontSize}) => fontSize ? fontSize : "inherit"};
-`
-export let ImageContainer = styled.div`
-    background: url(${({ src }) => src}) no-repeat;
-    background-position: center;
-    background-size: contain;
-    height: 100%;
-    width: 100%;
-    flex-grow: 1;
-`
-
-export let Quote = styled.blockquote`
-    font-size: 24px;
-    margin: 0 auto;
-    font-style: italic;
-    white-space: pre-line;
+export const SignatureContainer = styled.div`
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    padding: 1.5em;
-    z-index: 1;
+    align-items: flex-end;
+    padding-right: 1.3em;
+    padding-bottom: 1.3em;
+    box-sizing: border-box;
+`
+export const Signature = styled.cite`
+    text-align: right;
+    font-size: ${({fontSize}) => fontSize ? fontSize : "inherit"};
 
+    &:first-child {
+        margin-bottom: .5em;
+    }
+`
+export const Position = styled(Signature)`
+    font-size: .8em;
+`
+export const Name = styled(Signature)`
+`
+
+export const Text = styled.blockquote`
+    font-size: 24px;
+    line-height: 1.6;
+    
     @media (max-width: 768px) {
         font-size: 16px;
+        line-height: 1.8;
     }
 
     @media (max-width: 440px) {
