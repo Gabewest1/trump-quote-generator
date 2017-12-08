@@ -11,7 +11,7 @@ import TintedBackground from "../../components/Common/TintedBackground"
 import SocialMediaIcon from "../../components/SocialMediaIcon"
 import FetchQuoteButton from "../../components/Button/FetchQuote"
 
-const Section = styled.h1`
+const Title = styled.h1`
     align-items: center;
     box-sizing: border-box;
     color: ${ white };
@@ -25,6 +25,7 @@ const Section = styled.h1`
     text-align: center;
     white-space: no-wrap;
     width: 100%;
+    z-index: 1;
 
     @media (max-width: 900px) {
         font-size: 30px;
@@ -38,23 +39,28 @@ const Section = styled.h1`
 `
 
 const color = "rgba(0, 0, 0, .8)"
+
 const Container = styled.div`
-    background: 
-        linear-gradient(to top, ${ color }, ${ color }),
-        url(${({ src }) => src}) center center no-repeat
-    
-    background-size: 100%;;
+    background-image: url(${({ src }) => src});
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;;
     height: ${() => window.innerHeight}px;    
     margin: 0 auto;
+    transition: background-image .5s ease-in-out;
+    position: relative;
 
     @media (max-width: 768px) {
+        font-size: 16px;
         background-size: 150%;
+        justify-content: center;
     }
     @media (max-width: 420px) {
+        font-size: 12px;
         background-size: 200%;
     }
 `
@@ -62,27 +68,30 @@ const Body = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     width: 100%;
     position: relative;
     height: 400px;
+    max-width: 768px;
+    width: 70%;
 `
 
 const _Quote = styled(Quote)`
-    max-width: 768px;
-    // position: absolute;
     z-index: 1;
+    width: 100%;
 `
 const Buttons = styled.div`
     display: flex;
-    justify-content: flex-end;
-    padding-bottom: 50px;
-    
-    > * {
-        font-size: 20px;
-    }
+    justify-content: space-between;
+    padding: 50px 0px;
+    width: 100%;
 
     @media (max-width: 480px) {
-        font-size: 14px;
+        flex-direction: column;
+
+        > * {
+            margin-bottom: 15px;
+        }
     }
 `
 
@@ -104,16 +113,17 @@ class App extends React.Component {
 
         return (
             <Container src={ imgSrc }>
-                <Section mode="single" style={{ gridArea: "header" }}>
+                <TintedBackground style={{ zIndex: 0 }}/>
+                <Title mode="single" style={{ gridArea: "header" }}>
                     The Nations Brightest Minds
-                </Section>
+                </Title>
                 <Body>
                     <_Quote />
+                    <Buttons>
+                        <FetchQuoteButton>Next Idiot's Thought</FetchQuoteButton>
+                        <SocialMediaIcon src="Twitter.svg" />
+                    </Buttons>
                 </Body>
-                <Buttons>
-                    <FetchQuoteButton>Next Idiot's Thought</FetchQuoteButton>
-                    <SocialMediaIcon src="Twitter.svg" />
-                </Buttons>
             </Container>
         )
     }
