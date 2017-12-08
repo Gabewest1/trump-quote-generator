@@ -95,21 +95,32 @@ const Buttons = styled.div`
     }
 `
 
+const administrationMembersImageSources = {
+    "Donald J. Trump": "donald-trump",
+    "Jeff Sessions": "jeff-sessions",
+    "Betsy DeVos": "betsy-devos",
+    "Ben Carson": "ben-carson",
+    "Scott Pruitt": "scott-pruitt",
+    "Rick Perry": "rick-perry",
+    "Sean Spicer": "sean-spicer"
+}
+
 class QuoteGenerator extends React.Component {
-    render() {     
-        const administrationMembersImageSources = {
-            "Donald J. Trump": "donald-trump",
-            "Jeff Sessions": "jeff-sessions",
-            "Betsy DeVos": "betsy-devos",
-            "Ben Carson": "ben-carson",
-            "Scott Pruitt": "scott-pruitt",
-            "Rick Perry": "rick-perry",
-            "Sean Spicer": "sean-spicer"
+    constructor() {
+        super()
+
+        this.state = {
+            numPictures: 2,
+            offset: 1,
+            counter: 0,
         }
+    }
+    render() {
+        const { numPictures, offset, counter } = this.state
+        const { author, position, text } = this.props.quote
 
-        let { author, position, text } = this.props.quote
-
-        let imgSrc = administrationMembersImageSources[author] + "1.png"
+        const index = (counter % numPictures) + offset
+        const imgSrc = administrationMembersImageSources[author] + index + ".png"
 
         return (
             <Container src={ imgSrc }>
@@ -120,12 +131,15 @@ class QuoteGenerator extends React.Component {
                 <Body>
                     <_Quote />
                     <Buttons>
-                        <FetchQuoteButton>Next Idiot's Thought</FetchQuoteButton>
+                        <FetchQuoteButton onClick={ this.onClick }>Next Idiot's Thought</FetchQuoteButton>
                         <SocialMediaIcon src="Twitter.svg" />
                     </Buttons>
                 </Body>
             </Container>
         )
+    }
+    onClick = () => {
+        this.setState({ counter: this.state.counter + 1 })   
     }
 }
 
