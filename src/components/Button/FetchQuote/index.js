@@ -6,10 +6,15 @@ import { Button } from "./styles"
 import { actions as quoteActions } from "../../../actions/quotes"
 
 class FetchQuoteButton extends React.Component {
+    onClick = () => {
+        this.props.onClick()
+        this.props.fetchRandomQuote()
+    }
     render() {
         let { children, fetchRandomQuote } = this.props
+
         return (
-            <Button { ...this.props } onClick={() => fetchRandomQuote()}>
+            <Button { ...this.props } onClick={ this.onClick }>
                 { children }
             </Button>
         )
