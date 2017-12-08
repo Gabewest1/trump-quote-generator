@@ -5,7 +5,7 @@ export const Icon = styled.img`
     float: right;
     width: 35px;
     color: ${blue};
-    background: ${blue};
+    // background: ${blue};
     margin-left: 7px;
     position: relative;
 

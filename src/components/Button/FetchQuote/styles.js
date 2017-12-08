@@ -4,11 +4,11 @@ import { blue } from "../../../theme/colors"
 export const Button = styled.button`
     color: white;
     padding: 1em 1.5em;
-    background: ${blue};
-    box-shadow: 0 3px 0 #1a5c87;
+    background: transparent;
+    box-shadow: 0 3px 0 #fff;
     outline: none;
     position: relative;
-    border: none;
+    border: solid thin white;
 
     &:active {
         top: 3px;

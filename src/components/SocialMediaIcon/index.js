@@ -2,7 +2,8 @@ import React from "react"
 import { connect } from "react-redux"
 import { bindActionCreators } from "redux"
 
-import { Button, Icon } from "./styles.js"
+import { Icon } from "./styles.js"
+import { Button } from "../Button/FetchQuote/styles"
 import { actions as socialMediaActions } from "../../actions/socialMedia"
 
 class SocialMediaIcon extends React.Component {
