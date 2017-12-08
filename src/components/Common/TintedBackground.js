@@ -5,5 +5,5 @@ export default styled.div`
     height: 100%;
     width: 100%;
     background: ${({bg}) => bg ? bg : "black"};
-    opacity: .6;
+    opacity: .7;
 `
