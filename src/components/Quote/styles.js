@@ -48,7 +48,8 @@ export const Text = styled.blockquote`
         line-height: 1.8;
     }
 
-    @media (max-width: 440px) {
+    @media (max-width: 480px) {
+        margin: 10px;
         font-size: 12px;
         line-height: 1.3;
     }
