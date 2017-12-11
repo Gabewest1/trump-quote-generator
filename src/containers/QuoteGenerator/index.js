@@ -4,6 +4,7 @@ import { bindActionCreators } from "redux"
 import styled from "styled-components"
 import { blue, red, white } from "../../theme/colors"
 import { Textfit } from "react-textfit"
+import { actions as quoteActions } from "../../actions/quotes"
 
 import Header from "../../components/Header"
 import Quote from "../../components/Quote"
@@ -11,11 +12,14 @@ import TintedBackground from "../../components/Common/TintedBackground"
 import SocialMediaIcon from "../../components/SocialMediaIcon"
 import FetchQuoteButton from "../../components/Button/FetchQuote"
 
+const Container = styled.section`
+    display: relative;
+`
 const Title = styled.h1`
-    align-items: center;
     box-sizing: border-box;
     color: ${ white };
     display: flex;
+    flex-grow: 1;
     font-family: Playfair;
     font-size: 36px;
     font-style: italic;
@@ -27,41 +31,41 @@ const Title = styled.h1`
     width: 100%;
     z-index: 1;
 
-    @media (max-width: 900px) {
-        font-size: 30px;
-    }
-    @media (max-width: 750px) {
-        font-size: 24px;
-    }
-    @media (max-width: 621px) {
-        font-size: 20px;
+    @media (max-width: 480px) {
+        font-size: 26px;
     }
 `
-
+const FadeView = styled.div`
+    background: black;
+    transition: opacity ${({ animationDuration }) => animationDuration }ms ease-in-out;
+    opacity: ${({ fadeOut }) => fadeOut ? 1 : 0 };
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+`
 const color = "rgba(0, 0, 0, .8)"
 
-const Container = styled.div`
+const AnimatedBackground = styled.div`
     background-image: url(${({ src }) => src});
     background-position: center center;
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;;
     height: ${() => window.innerHeight}px;    
     margin: 0 auto;
-    transition: background-image .5s ease-in-out;
     position: relative;
 
     @media (max-width: 768px) {
         font-size: 16px;
-        background-size: 150%;
         justify-content: center;
     }
     @media (max-width: 420px) {
         font-size: 12px;
-        background-size: 200%;
     }
 `
 const Body = styled.div`
@@ -73,9 +77,8 @@ const Body = styled.div`
     position: relative;
     height: 400px;
     max-width: 768px;
-    width: 70%;
+    width: 90%;
 `
-
 const _Quote = styled(Quote)`
     z-index: 1;
     width: 100%;
@@ -91,6 +94,7 @@ const Buttons = styled.div`
 
         > * {
             margin-bottom: 15px;
+            height: 40px;
         }
     }
 `
@@ -110,45 +114,70 @@ class QuoteGenerator extends React.Component {
         super()
 
         this.state = {
+            animationDuration: 1000,
             numPictures: 2,
             offset: 1,
             counter: 0,
+            fadeOut: false
         }
     }
+    componentShouldUpdate(nextProps, nextState) {
+        return nextState.counter === this.state.counter
+    }
     render() {
-        const { numPictures, offset, counter } = this.state
+        const { animationDuration, fadeOut, numPictures, offset, counter } = this.state
         const { author, position, text } = this.props.quote
 
         const index = (counter % numPictures) + offset
         const imgSrc = administrationMembersImageSources[author] + index + ".png"
 
         return (
-            <Container src={ imgSrc }>
-                <TintedBackground style={{ zIndex: 0 }}/>
-                <Title mode="single" style={{ gridArea: "header" }}>
-                    The Nations Brightest Minds
-                </Title>
-                <Body>
-                    <_Quote />
-                    <Buttons>
-                        <FetchQuoteButton onClick={ this.onClick }>Next Idiot's Thought</FetchQuoteButton>
-                        <SocialMediaIcon src="Twitter.svg" />
-                    </Buttons>
-                </Body>
+            <Container>
+                <AnimatedBackground src={ imgSrc }>
+
+                    <FadeView 
+                        animationDuration={ animationDuration }
+                        fadeOut={ fadeOut }/>
+
+                    <TintedBackground style={{ }}/>
+
+                    <Title mode="single" style={{ gridArea: "header" }}>
+                        The Nations Brightest Minds
+                    </Title>
+
+                    <Body>
+                        <_Quote />
+                        <Buttons>
+                            <FetchQuoteButton onClick={ this.onClick }>Next Idiot's Thought</FetchQuoteButton>
+                            <SocialMediaIcon src="Twitter.svg" />
+                        </Buttons>
+                    </Body>
+
+                </AnimatedBackground>
             </Container>
         )
     }
     onClick = () => {
-        this.setState({ counter: this.state.counter + 1 })   
+        this.setState({ fadeOut: true })
+
+        setTimeout(() => {
+            this.setState({ counter: this.state.counter + 1 })
+
+            setTimeout(() => {
+                this.setState({ fadeOut: false })
+                this.props.fetchRandomQuote()
+            }, 100)
+            
+        }, this.state.animationDuration)
     }
 }
 
 function mapStateToProps(state) {
-    return {quote: state.currentQuote}
+    return { quote: state.currentQuote }
 }
 
 function mapDispatchToProps(dispatch) {
-    return bindActionCreators({}, dispatch)
+    return bindActionCreators({ ...quoteActions }, dispatch)
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(QuoteGenerator)
