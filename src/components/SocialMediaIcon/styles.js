@@ -3,7 +3,7 @@ import { blue } from "../../theme/colors"
 
 export const Icon = styled.img`
     float: right;
-    width: 35px;
+    width: 27px;
     max-width: 100%;
     max-height: 100%;
     color: ${blue};
