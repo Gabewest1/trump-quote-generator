@@ -158,7 +158,7 @@ class QuoteGenerator extends React.Component {
         )
     }
     onClick = () => {
-        //The timers are used to cancel the animation if the onClick is called
+        //The timers are used to cancel and restart the animation if the onClick is called
         //before a previous invocation finishes.
         if (this.timer) {
             this.timer = clearTimeout(this.timer)
