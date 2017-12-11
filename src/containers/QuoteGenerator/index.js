@@ -158,14 +158,20 @@ class QuoteGenerator extends React.Component {
         )
     }
     onClick = () => {
+        //The timers are used to cancel the animation if the onClick is called
+        //before a previous invocation finishes.
+        if (this.timer) {
+            this.timer = clearTimeout(this.timer)
+        }
+
         this.setState({ fadeOut: true })
 
-        setTimeout(() => {
+        this.timer = setTimeout(() => {
             this.setState({ counter: this.state.counter + 1 })
+            this.props.fetchRandomQuote()
 
             setTimeout(() => {
                 this.setState({ fadeOut: false })
-                this.props.fetchRandomQuote()
             }, 100)
             
         }, this.state.animationDuration)
