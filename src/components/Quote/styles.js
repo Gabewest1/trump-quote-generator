@@ -1,6 +1,5 @@
 import styled from "styled-components"
-import { Textfit } from "react-textfit"
-import { red, blue, white } from "../../theme/colors"
+import { white } from "../../theme/colors"
 
 export const Container = styled.div`
     position: relative;

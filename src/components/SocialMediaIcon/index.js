@@ -12,7 +12,10 @@ class SocialMediaIcon extends React.Component {
         let socialMediaPlatform = src.toLowerCase().substring(0, src.indexOf("."))
 
         return (
-            <Button onClick={() => postQuoteSocialMedia(socialMediaPlatform, quote) }>
+            <Button 
+                data-testId="share-twitter"
+                onClick={() => postQuoteSocialMedia(socialMediaPlatform, quote) }
+            >
                 Share Quote
                 <Icon src={src} />
             </Button>

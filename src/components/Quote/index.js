@@ -1,7 +1,6 @@
 import React from "react"
 import { connect } from "react-redux"
 import { bindActionCreators } from "redux"
-import TintedBackground from "../Common/TintedBackground"
 import { Container, Text, Name, Position, SignatureContainer } from "./styles"
 
 import { actions as quoteActions } from "../../actions/quotes"
@@ -15,31 +14,31 @@ class Quote extends React.Component {
         //available letter given a string and a starting index
         const quotate = x => "\"" + x + "\""
         const indexOfNextLetter = (str, i) => 
-            i < str.length ? /\w/.test(str[i]) ? i : indexOfNextLetter(str, i+1)
-                           : -1
+            i < str.length 
+                ? /\w/.test(str[i]) 
+                ? i : indexOfNextLetter(str, i+1)
+                    : -1
 
         if(/^\[.*\]:/.test(quote)) {
-            let index = quote.indexOf(":")
-            let newLineIndex = quote.indexOf("\n")
             let formattedQuote = quote.split("\n")
-                              .filter((chunk) => chunk !== "")
-                              .map(chunk => {
-                                  console.log("ENTER:",chunk)
-                                  if(!chunk.startsWith("["))
-                                    return quotate(chunk)
+                .filter((chunk) => chunk !== "")
+                .map(chunk => {
+                    console.log("ENTER:",chunk)
+                    if(!chunk.startsWith("["))
+                        return quotate(chunk)
 
-                                  let bracket = chunk.indexOf("[")
-                                  let colon = chunk.indexOf(":")
-                                  let author = chunk.substring(bracket, colon+1)
+                    let bracket = chunk.indexOf("[")
+                    let colon = chunk.indexOf(":")
+                    let author = chunk.substring(bracket, colon+1)
 
-                                  let quoteStart = indexOfNextLetter(chunk.substring(colon+1), colon+2)
-                                  let quote = chunk.substring(quoteStart)
-                                  console.log("RESULT:", author, quote)
-                                  console.log("QUTOESTART:", quoteStart)
-                                  return author + " " + quotate(quote)
-                              })
-                              .reduce((formattedQuote, chunk) => formattedQuote += chunk + "\n\n", "")
-                              .trim()
+                    let quoteStart = indexOfNextLetter(chunk.substring(colon+1), colon+2)
+                    let quote = chunk.substring(quoteStart)
+                    console.log("RESULT:", author, quote)
+                    console.log("QUTOESTART:", quoteStart)
+                    return author + " " + quotate(quote)
+                })
+                .reduce((formattedQuote, chunk) => formattedQuote += chunk + "\n\n", "")
+                .trim()
 
             return formattedQuote
         }
@@ -51,7 +50,7 @@ class Quote extends React.Component {
 
         return (
             <Container { ...this.props }>
-                <Text>
+                <Text data-testId="quote">
                     { this.formatQuote(text) }
                 </Text>
                 <SignatureContainer>

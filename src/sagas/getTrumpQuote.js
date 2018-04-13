@@ -8,7 +8,7 @@ export function* getTrumpQuote() {
     //The first time this function gets called there isn't
     //any trump quotes so need to wait for them to be fetched
     if (trumpQuotes.length === 0) {
-        yield take("FETCH_TRUMP_QUOTES_SUCCESS")
+        yield take(quotesConstants.FETCH_TRUMP_QUOTES_SUCCESS)
         state = yield select()
         trumpQuotes = state.trumpQuotes
     }

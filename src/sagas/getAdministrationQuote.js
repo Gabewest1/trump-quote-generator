@@ -1,5 +1,4 @@
-import { call, put, take } from "redux-saga/effects"
-import { constants as quotesConstants } from "../actions/quotes"
+import { call } from "redux-saga/effects"
 
 const URL = "administrationQuotes.json"
 

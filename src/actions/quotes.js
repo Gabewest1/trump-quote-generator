@@ -2,6 +2,7 @@ const SET_CURRENT_QUOTE = "SET_CURRENT_QUOTE"
 const GET_RANDOM_QUOTE = "GET_RANDOM_QUOTE"
 const GET_ADMIN_QUOTE = "GET_ADMIN_QUOTE"
 const GET_TRUMP_QUOTE = "GET_TRUMP_QUOTE"
+const FETCH_TRUMP_QUOTES_SUCCESS = "FETCH_TRUMP_QUOTES_SUCCESS"
 
 const fetchRandomQuote = () => ({ type: GET_RANDOM_QUOTE })
 const fetchAdministrationQuote = () => ({ type: GET_ADMIN_QUOTE })
@@ -20,4 +21,5 @@ export const constants = {
     GET_RANDOM_QUOTE,
     GET_ADMIN_QUOTE,
     GET_TRUMP_QUOTE,
+    FETCH_TRUMP_QUOTES_SUCCESS
 }

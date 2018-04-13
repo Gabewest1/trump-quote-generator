@@ -1,13 +1,9 @@
 import React from "react"
 
-import { HeaderContainer, Title } from "./styles"
+import { Header } from "./styles"
 
-export default class Header extends React.Component {
-    render() {
-        return (
-            <HeaderContainer mode="single">
-                <Title>America's Leaders</Title>
-            </HeaderContainer>
-        )
-    }
-}
+export default props => (
+    <Header data-testId="header" { ...props }>
+        The Nations Brightest Minds
+    </Header>
+)

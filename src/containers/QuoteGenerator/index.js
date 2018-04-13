@@ -2,8 +2,6 @@ import React from "react"
 import { connect } from "react-redux"
 import { bindActionCreators } from "redux"
 import styled from "styled-components"
-import { blue, red, white } from "../../theme/colors"
-import { Textfit } from "react-textfit"
 import { actions as quoteActions } from "../../actions/quotes"
 
 import Header from "../../components/Header"
@@ -15,26 +13,7 @@ import FetchQuoteButton from "../../components/Button/FetchQuote"
 const Container = styled.section`
     display: relative;
 `
-const Title = styled.h1`
-    box-sizing: border-box;
-    color: ${ white };
-    display: flex;
-    flex-grow: 1;
-    font-family: Playfair;
-    font-size: 36px;
-    font-style: italic;
-    font-style: underline;
-    height: 80px;
-    justify-content: center;
-    text-align: center;
-    white-space: no-wrap;
-    width: 100%;
-    z-index: 1;
 
-    @media (max-width: 480px) {
-        font-size: 26px;
-    }
-`
 const FadeView = styled.div`
     background: black;
     transition: opacity ${({ animationDuration }) => animationDuration }ms ease-in-out;
@@ -45,7 +24,6 @@ const FadeView = styled.div`
     height: 100%;
     width: 100%;
 `
-const color = "rgba(0, 0, 0, .8)"
 
 const AnimatedBackground = styled.div`
     background-image: url(${({ src }) => src});
@@ -79,7 +57,7 @@ const Body = styled.div`
     max-width: 768px;
     width: 90%;
 `
-const _Quote = styled(Quote)`
+const QuoteView = styled(Quote)`
     z-index: 1;
     width: 100%;
 `
@@ -121,12 +99,10 @@ class QuoteGenerator extends React.Component {
             fadeOut: false
         }
     }
-    componentShouldUpdate(nextProps, nextState) {
-        return nextState.counter === this.state.counter
-    }
+
     render() {
         const { animationDuration, fadeOut, numPictures, offset, counter } = this.state
-        const { author, position, text } = this.props.quote
+        const { author } = this.props.quote
 
         const index = (counter % numPictures) + offset
         const imgSrc = administrationMembersImageSources[author] + index + ".png"
@@ -141,12 +117,10 @@ class QuoteGenerator extends React.Component {
 
                     <TintedBackground style={{ }}/>
 
-                    <Title mode="single" style={{ gridArea: "header" }}>
-                        The Nations Brightest Minds
-                    </Title>
+                    <Header />
 
                     <Body>
-                        <_Quote />
+                        <QuoteView />
                         <Buttons>
                             <FetchQuoteButton onClick={ this.onClick }>Next Idiot's Thought</FetchQuoteButton>
                             <SocialMediaIcon src="Twitter.svg" />

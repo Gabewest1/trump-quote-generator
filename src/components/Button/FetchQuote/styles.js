@@ -1,5 +1,4 @@
 import styled from "styled-components"
-import { blue } from "../../../theme/colors"
 
 export const Button = styled.button`
     color: white;

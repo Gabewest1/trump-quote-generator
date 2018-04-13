@@ -1,4 +1,4 @@
-import { call, put, take } from "redux-saga/effects"
+import { put, take } from "redux-saga/effects"
 import { constants as quotesConstants, actions as quoteActions } from "../actions/quotes"
 
 import { getAdministrationQuote } from "./getAdministrationQuote"
@@ -11,8 +11,8 @@ export function* getRandomQuote() {
         let coinFlip = Math.floor(Math.random() * 2) % 2 === 0 ? "heads" : "tails"
 
         let quote = coinFlip === "heads" 
-                            ? yield getAdministrationQuote()
-                            : yield getTrumpQuote()
+            ? yield getAdministrationQuote()
+            : yield getTrumpQuote()
 
         yield put(quoteActions.setCurrentQuote(quote))
     }

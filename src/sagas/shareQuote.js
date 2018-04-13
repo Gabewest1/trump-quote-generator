@@ -1,4 +1,4 @@
-import { call, put, take } from "redux-saga/effects"
+import { take } from "redux-saga/effects"
 import { constants as socialMediaConstants } from "../actions/socialMedia"
 
 const mapPlatformsToUrls = {
